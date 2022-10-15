@@ -1,4 +1,0 @@
-Python == 3.10.8
-Pandas ==1.5.0
-requests >= 2.14.2
-lxml >= 4.9.1
