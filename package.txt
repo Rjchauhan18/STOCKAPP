@@ -1,6 +1,6 @@
 Python == 3.10.8
-Pandas (tested to work with >=0.23.1)
+Pandas ==1.15.0
 Numpy >= 1.11.1
 requests >= 2.14.2
-lxml >= 4.5.1
+lxml >= 4.9.1
 appdirs >=1.4.4
