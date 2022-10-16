@@ -23,7 +23,7 @@ start_date = st.sidebar.date_input("start date", dt.date(2021,1,1))
 End_date = st.sidebar.date_input("End date", dt.date(2022,1,1))
 
 # Retrieving tickers data
-ticker_list = pd.read_csv('https://github.com/Rjchauhan18/STOCKAPP/blob/main/NIFTYSTOCK.txt')
+ticker_list = pd.read_csv('https://raw.githubusercontent.com/Rjchauhan18/STOCKAPP/5dd43746f6f8be5246c2081e2ba81ead524fc57a/NIFTYSTOCK.txt?token=GHSAT0AAAAAABY5BTYJBM33PWO7CGNWDVSOY2LZEJQ')
 
 tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
