@@ -23,7 +23,7 @@ start_date = st.sidebar.date_input("start date", dt.date(2021,1,1))
 End_date = st.sidebar.date_input("End date", dt.date(2022,1,1))
 
 # Retrieving tickers data
-ticker_list = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/s-and-p-500-companies/master/data/constituents_symbols.txt')
+ticker_list = ('TATASTEEL.NS','TCS.NS','HDFCLIFE.NS','WIPRO.NS','EICHERMOT.NS','INFY.NS','MARUTI.NS','TECHM.NS','BRITANNIA.NS','HCLTECH.NS','MM.NS','BAJAJ-AUTO.NS','SBIN.NS','HINDUNILVR.NS','DRREDDY.NS','ICICIBANK.NS','INDUSINDBK.NS','JSWSTEEL.NS','TATASTEEL.NS','NTPC.NS','POWERGRID.NS','COALINDIA.NS','BHARTIARTL.NS','SBILIFE.NS','ONGC.NS','BAJFINANCE.NS','ULTRACEMCO.NS','SUNPHARMA.NS','ADANIENT.NS','LT.NS','BAJAJFINSV.NS','UPL.NS','ADANIPORTS.NS','CIPLA.NS','HINDALCO.NS','BPCL.NS','NESTLEIND.NS','KOTAKBANK.NS','HDFCBANK.NS','RELIANCE.NS','APOLLOHOSP.NS','HDFC.NS','DIVISLAB.NS','GRASIM.NS','TITAN.NS','ITC.NS','ASIANPAINT.NS','HEROMOTOCO.NS')
 
 tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
