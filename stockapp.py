@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 #app title
 st.markdown(
     """
-    # Stock Price App\n
+    # Stock Price Analysis \n
     Shown are the stock price data for the query companys!
 
     """
