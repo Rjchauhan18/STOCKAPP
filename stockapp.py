@@ -2,7 +2,7 @@ import yfinance as yf
 import pandas as pd
 import streamlit as st
 import datetime as dt
-#import cufflinks as cf
+import cufflinks as cf
 import matplotlib.pyplot as plt
 
 
@@ -49,12 +49,12 @@ st.write(tickerDf)
 
 # Bollinger bands
 st.header('**Bollinger Bands**')
-"""
+
 qf=cf.QuantFig(tickerDf,title='First Quant Figure',legend='top',name='GS')
 qf.add_bollinger_bands()
 fig = qf.iplot(asFigure=True)
 st.plotly_chart(fig)
-"""
+
 
 
 
