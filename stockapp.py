@@ -54,7 +54,7 @@ def convert_df(df):
 
 csv = convert_df(tickerDf)
 
-st.download_button(
+Download = st.download_button(
     label="Download data as CSV",
     data=csv,
     file_name='stock.csv',
