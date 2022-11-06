@@ -28,6 +28,7 @@ ticker_list = ('TATASTEEL.NS','TCS.NS','HDFCLIFE.NS','WIPRO.NS','EICHERMOT.NS','
 tickerSymbol = st.sidebar.selectbox('Stock ticker', ticker_list) # Select ticker symbol
 tickerData = yf.Ticker(tickerSymbol) # Get ticker data
 tickerDf = tickerData.history(period='1d', start=start_date, end=End_date) #get the historical prices for this ticke
+tickerDf.reset_index(inplace=True)
 
 # Ticker information
 string_logo = '<img src=%s>' % tickerData.info['logo_url']
@@ -46,6 +47,19 @@ st.info(string_summary)
 st.header('**Ticker data**')
 st.write(tickerDf)
 
+@st.cache
+def convert_df(df):
+    # IMPORTANT: Cache the conversion to prevent computation on every rerun
+    return df.to_csv().encode('utf-8')
+
+csv = convert_df(tickerDf)
+
+st.download_button(
+    label="Download data as CSV",
+    data=csv,
+    file_name='stock.csv',
+    mime='text/csv',
+)
 
 # Bollinger bands
 st.header('**Bollinger Bands**')
