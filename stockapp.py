@@ -4,7 +4,7 @@ import streamlit as st
 import datetime as dt
 import cufflinks as cf
 import matplotlib.pyplot as plt
-
+from plotly import graph_objects as go
 
 #app title
 st.markdown(
@@ -60,6 +60,21 @@ st.download_button(
     file_name='stock.csv',
     mime='text/csv',
 )
+
+#ploting the high and low graph
+
+def plot_raw_data():
+    fig = go.Figure()
+    fig.add_trace(go.Scatter(
+        x=tickerDf['Date'], y=tickerDf['Open'], name="stock_open"))
+    fig.add_trace(go.Scatter(
+        x=tickerDf['Date'], y=tickerDf['Close'], name="stock_close"))
+    fig.layout.update(
+        title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=Tr
+    st.plotly_chart(fig)
+
+
+plot_raw_data()
 
 if st.button('BOLLINGER BAND'):
     # Bollinger bands
