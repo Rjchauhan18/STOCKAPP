@@ -4,6 +4,7 @@ import streamlit as st
 import datetime as dt
 import cufflinks as cf
 import matplotlib.pyplot as plt
+import plotly
 from plotly import graph_objects as go
 
 #app title
