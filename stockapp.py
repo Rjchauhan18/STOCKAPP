@@ -61,13 +61,14 @@ st.download_button(
     mime='text/csv',
 )
 
-# Bollinger bands
-st.header('**Bollinger Bands**')
+if st.button('BOLLINGER BAND'):
+    # Bollinger bands
+    st.header('**Bollinger Bands**')
 
-qf=cf.QuantFig(tickerDf,title='First Quant Figure',legend='top',name='GS')
-qf.add_bollinger_bands()
-fig = qf.iplot(asFigure=True)
-st.plotly_chart(fig)
+    qf=cf.QuantFig(tickerDf,title='First Quant Figure',legend='top',name='GS')
+    qf.add_bollinger_bands()
+    fig = qf.iplot(asFigure=True)
+    st.plotly_chart(fig)
 
 
 
