@@ -74,7 +74,7 @@ def plot_raw_data():
     fig.add_trace(go.Scatter(
         x=tickerDf['Date'], y=tickerDf['Close'], name="stock_close"))
     fig.layout.update(
-        title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=Tr
+        title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
     st.plotly_chart(fig)
 
 plot_raw_data()
