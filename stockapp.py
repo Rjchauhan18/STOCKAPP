@@ -75,7 +75,7 @@ def plot_raw_data():
         x=tickerDf['Date'], y=tickerDf['Close'], name="stock_close"))
     fig.layout.update(
         title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
-    st.plotly_chart(fig)
+    st.plotly_chart(fig, use_container_width=True)
 
 plot_raw_data()
 
