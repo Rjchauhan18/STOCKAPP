@@ -8,6 +8,9 @@ import plotly
 from plotly import graph_objects as go
 
 #app title
+
+st.set_page_config(page_title="Stock Price Analysis" , page_icon=":bar_chart:", layout="wide")
+
 st.markdown(
     """
     # Stock Price Analysis \n
@@ -46,7 +49,7 @@ st.info(string_summary)
 
 # Ticker data
 st.header('**Ticker data**')
-st.write(tickerDf)
+st.table(tickerDf)
 
 @st.cache
 def convert_df(df):
