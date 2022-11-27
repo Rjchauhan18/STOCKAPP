@@ -67,7 +67,7 @@ st.download_button(
 
 #ploting the high and low graph
 
-#def plot_raw_data():
+def plot_raw_data():
     fig = go.Figure()
     fig.add_trace(go.Scatter(
         x=tickerDf['Date'], y=tickerDf['Open'], name="stock_open"))
