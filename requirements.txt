@@ -4,5 +4,4 @@ yfinance == 0.2.13
 cufflinks == 0.17.3
 datetime
 plotly==5.13.1
-TA-Lib == 0.4.25
 streamlit-pandas-profiling== 0.1.3
