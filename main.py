@@ -4,7 +4,7 @@ import streamlit as st
 import datetime as dt
 import cufflinks as cf
 # import matplotlib.pyplot as plt
-# import plotly
+import plotly
 import plotly.graph_objects as go
 # import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report 
@@ -12,7 +12,7 @@ from streamlit_pandas_profiling import st_profile_report
 from patterns import patterns,Company_Name
 import talib as ta
 # from talib import abstract
-import smtplib as smt 
+# import smtplib as smt 
 
 
 st.set_page_config(page_title="Stock Price Analysis" , page_icon=":bar_chart:", layout="wide")
