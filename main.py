@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 # import pandas_profiling
 from streamlit_pandas_profiling import st_profile_report 
 # from prophet import Prophet
-from patterns import patterns,Company_Name
+# from patterns import patterns,Company_Name
 import talib as ta
 # from talib import abstract
 # import smtplib as smt 
