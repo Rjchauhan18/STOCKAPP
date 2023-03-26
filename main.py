@@ -1,7 +1,7 @@
 import yfinance as yf
 import pandas as pd
 import streamlit as st
-import datetime as dt
+from datetime import datetime , date,timedelta
 import cufflinks as cf
 # import matplotlib.pyplot as plt
 import plotly
@@ -99,8 +99,18 @@ with st.sidebar:
     st.sidebar.markdown(' # Stock Price Analysis ')
     st.sidebar.title(f"Welcome ")
 
-    start_date = dt.date.today()
-    end_date = dt.date.today() + dt.timedelta(days=1)
+    
+    # get current datetime
+    dt = datetime.now()
+        
+    DAY = dt.strftime('%A')
+   
+    if DAY == 'Saturday' or DAY == 'Sunday':
+        start_date =  date.today() - timedelta(days=3)
+        end_date = date.today() - timedelta(days=2)
+    else:
+        start_date = date.today()
+        end_date = date.today() + timedelta(days=1)
 
 
     start= st.sidebar.date_input("start date", start_date)
