@@ -304,7 +304,7 @@ if navigation == 'Home' :
         fig.layout.update(
             title_text='Time Series data with Rangeslider', xaxis_rangeslider_visible=True)
         st.plotly_chart(fig , use_container_width=True)
-#     plot_raw_data()
+    plot_raw_data()
     # ADX_LIST = []
     # macd(company)
 
