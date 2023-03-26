@@ -104,7 +104,7 @@ with st.sidebar:
 
 
     start= st.sidebar.date_input("start date", start_date)
-    End = st.sidebar.date_input("End date", end_date) 
+    end = st.sidebar.date_input("End date", end_date) 
 
     # company = ('ADANIENT.NS', 'ADANIPORTS.NS', 'APOLLOHOSP.NS', 'ASIANPAINT.NS', 'AXISBANK.NS', 'MARUTI.NS', 'BAJFINANCE.NS', 'BAJAJFINSV.NS', 'BPCL.NS', 'BRITANNIA.NS', 'CIPLA.NS', 'COALINDIA.NS', 'DIVISLAB.NS', 'DRREDDY.NS', 'EICHERMOT.NS', 'GRASIM.NS', 'HCLTECH.NS', 'HDFCBANK.NS', 'HDFCLIFE.NS', 'HEROMOTOCO.NS', 'HINDALCO.NS', 'HINDUNILVR.NS', 'HDFC.NS', 'ICICIBANK.NS', 'ITC.NS', 'INDUSINDBK.NS', 'INFY.NS', 'JSWSTEEL.NS', 'KOTAKBANK.NS', 'LT.NS', 'M&M.NS', 'NTPC.NS', 'NESTLEIND.NS', 'ONGC.NS', 'POWERGRID.NS',  'SBILIFE.NS', 'SBIN.NS', 'SUNPHARMA.NS', 'TCS.NS', 'TATACONSUM.NS', 'TATAMTRDVR.NS',  'TECHM.NS', 'TITAN.NS', 'UPL.NS', 'ULTRACEMCO.NS', 'WIPRO.NS')
 
@@ -154,7 +154,7 @@ def adx() :
     for stocks in company:
         # st.write(stocks)
         data_symbol = yf.Ticker(stocks)
-        data = data_symbol.history(period=periods,interval=timeframes, start=start_date, end=end_date)
+        data = data_symbol.history(period=periods,interval=timeframes, start=start, end=end)
         data.rename(columns={'Open':'open','Close':'close','High':'high','Low':'low'}, inplace=True)
         ADX_VALUE = ta.ADX(data['high'],data['low'],data['close'],timeperiod=14)
         adx_result = ADX_VALUE.tail(1).values[0]
@@ -183,7 +183,7 @@ def pattern_reco(company_list):
         # st.write(company_list[i])
         stock_data= yf.Ticker(company_list[i]) 
 
-        data = stock_data.history(period='1d',interval=timeframes, start=start_date, end=end_date)
+        data = stock_data.history(period='1d',interval=timeframes, start=start, end=end)
         data.rename(columns = {'Open' : 'open', 'High' : 'high', 'Low' : 'low', 'Close' : 'close', 'Volumn' : 'volumn'}, inplace = True)
         # main = "ta.{}(data['open'], data['high'], data['low'], data['close'])".formate(use_pattern)
         # st.write(main)
@@ -212,7 +212,7 @@ def macd(stock_list) :
 
     for stocks in stock_list:
         data_symbol = yf.Ticker(stocks)
-        data = data_symbol.history(period=periods,interval=timeframes, start=start_date, end=end_date)
+        data = data_symbol.history(period=periods,interval=timeframes, start=start, end=end)
         data.rename(columns={'Open':'open','Close':'close','High':'high','Low':'low'}, inplace=True)
         MACD_VALUE = ta.MACD(data['close'], fastperiod = 12, slowperiod = 26, signalperiod = 9)[0]
         
@@ -258,7 +258,7 @@ if navigation == 'Home' :
 
 
     # get the historical prices for this ticke
-    tickerDf = tickerData.history(period=periods,interval=timeframes, start=start_date, end=end_date)
+    tickerDf = tickerData.history(period=periods,interval=timeframes, start=start, end=end)
     tickerDf.reset_index(inplace=True)
 
     # #coverting time zone to date :
@@ -337,7 +337,7 @@ if navigation == 'Home' :
 if  navigation == 'Stock Report' :
 
     # get the historical prices for this ticke
-    tickerDf = tickerData.history(period='1d', start=start_date, end=end_date)
+    tickerDf = tickerData.history(period='1d', start=start, end=end)
     tickerDf.reset_index(inplace=True)
     profiling = tickerDf.profile_report()
     st_profile_report(profiling)
