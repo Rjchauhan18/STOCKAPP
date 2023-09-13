@@ -159,7 +159,13 @@ def app():
     # ADX_LIST = []
     # macd(company)
 
+
+
+
     
+
+
+
     # -----------------------------------------------------Predict forecast with Prophet.
 # # 
 #     df_train = tickerDf[['Datetime','Close']]
