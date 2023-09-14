@@ -136,7 +136,7 @@ def app():
         st.plotly_chart(fig)
     with download:
         # download csv
-        @st.cache
+        @st.cache_data
         def convert_df(df):
             return df.to_csv().encode('utf-8')
         csv = convert_df(tickerDf)
