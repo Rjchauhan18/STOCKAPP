@@ -7,7 +7,7 @@ from patterns import patterns
 # import os
 # import sys
 # import subprocess
-# import talib as ta
+import talib as ta
 
 # # check if the library folder already exists, to avoid building everytime you load the pahe
 # if not os.path.isdir("/tmp/ta-lib"):
