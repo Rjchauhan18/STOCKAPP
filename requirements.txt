@@ -5,5 +5,5 @@ plotly
 streamlit
 streamlit_pandas_profiling
 yfinance
-TA-Lib
+# TA-Lib
 
