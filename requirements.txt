@@ -4,6 +4,6 @@ pandas_profiling
 plotly
 streamlit
 streamlit_pandas_profiling
-yfinance
+yfinance==0.2.31
 # TA-Lib
 
